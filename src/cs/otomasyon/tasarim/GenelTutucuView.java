@@ -5,20 +5,18 @@ import java.awt.EventQueue;
 
 import javax.swing.JDesktopPane;
 import javax.swing.JFrame;
-import javax.swing.JPanel;
 import javax.swing.JTree;
 import javax.swing.event.TreeSelectionEvent;
 import javax.swing.event.TreeSelectionListener;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
-import cs.otomasyon.tasarim.uys.Modul;
 import cs.otomasyon.tasarim.uys.UyeEkleView;
+import cs.otomasyon.tasarim.uys.UyeListeleView;
 
 public class GenelTutucuView extends JFrame {
 
-	private JPanel contentPane;
-	private JDesktopPane desktopPane = new JDesktopPane();
+	private JDesktopPane jDesktopPane;
 	private static GenelTutucuView frame;
 
 	/**
@@ -42,11 +40,17 @@ public class GenelTutucuView extends JFrame {
 	 */
 	public GenelTutucuView() {
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 700, 700);
-		contentPane = new JPanel();
-		contentPane.setLayout(null);
-		setContentPane(contentPane);
-		desktopPane.setPreferredSize(new Dimension(600, 600));
+		jDesktopPane = new JDesktopPane() {
+			@Override
+			public Dimension getPreferredSize() {
+				return new Dimension(800, 800);
+			}
+		};
+		jDesktopPane.setBackground(getForeground());
+		jDesktopPane.setLayout(null);
+		setContentPane(jDesktopPane);
+		jDesktopPane.putClientProperty("JDesktopPane.dragMode", "outline");
+		pack();
 
 		JTree tree = new JTree();
 		tree.setModel(new DefaultTreeModel(new DefaultMutableTreeNode(
@@ -68,22 +72,22 @@ public class GenelTutucuView extends JFrame {
 				add(node_1);
 			}
 		}));
-		tree.setBounds(6, 6, 145, 266);
+		tree.setBounds(6, 6, 145, getWidth());
 		tree.addTreeSelectionListener(new AgacSecmeOlayi());
-		contentPane.add(tree);
+		jDesktopPane.add(tree);
 	}
 
 	private class AgacSecmeOlayi implements TreeSelectionListener {
 		@Override
 		public void valueChanged(TreeSelectionEvent event) {
-			System.out.println(event.getPath().getLastPathComponent());
 			if (event.getPath().getLastPathComponent().toString()
 					.equals(Modul.UYE_EKLE.getModulAd())) {
-				UyeEkleView view = new UyeEkleView();
-				view.setVisible(true);
-				desktopPane.add(view);
-				desktopPane.setDragMode(JDesktopPane.OUTLINE_DRAG_MODE);
-				contentPane.add(desktopPane);
+				UyeEkleView view = UyeEkleView.olustur(null);
+				jDesktopPane.add(view);
+			} else if (event.getPath().getLastPathComponent().toString()
+					.equals(Modul.UYE_LISTESI.getModulAd())) {
+				UyeListeleView view = UyeListeleView.olustur();
+				jDesktopPane.add(view);
 			}
 		}
 	}

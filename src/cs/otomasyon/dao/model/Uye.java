@@ -1,11 +1,13 @@
 package cs.otomasyon.dao.model;
 
-// Generated 04.Ara.2013 23:49:21 by Hibernate Tools 3.4.0.CR1
+// default package
+// Generated 24.Ara.2013 00:08:55 by Hibernate Tools 3.4.0.CR1
+
+import static javax.persistence.GenerationType.IDENTITY;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
-import static javax.persistence.GenerationType.IDENTITY;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
@@ -16,112 +18,110 @@ import javax.persistence.Table;
 @Table(name = "Uye", catalog = "OtomasyonSistemi")
 public class Uye implements java.io.Serializable {
 
-	private Integer uyeId;
-	private String uyeAd;
-	private String uyeSoyad;
-	private String uyeOgrenciNo;
-	private String uyeMailAdresi;
-	private String uyeTelNo;
-	private String uyeKayitTarih;
-	private String uyeBolum;
+	private Integer id;
+	private String ad;
+	private String soyad;
+	private String ogrenciNo;
+	private String mailAdresi;
+	private String telNo;
+	private String kayitTarih;
+	private Integer bolumId;
 
 	public Uye() {
 	}
 
-	public Uye(String uyeAd, String uyeSoyad, String uyeOgrenciNo,
-			String uyeMailAdresi, String uyeKayitTarih, String uyeBolum) {
-		this.uyeAd = uyeAd;
-		this.uyeSoyad = uyeSoyad;
-		this.uyeOgrenciNo = uyeOgrenciNo;
-		this.uyeMailAdresi = uyeMailAdresi;
-		this.uyeKayitTarih = uyeKayitTarih;
-		this.uyeBolum = uyeBolum;
+	public Uye(String ad, String soyad, String ogrenciNo, String mailAdresi,
+			String kayitTarih) {
+		this.ad = ad;
+		this.soyad = soyad;
+		this.ogrenciNo = ogrenciNo;
+		this.mailAdresi = mailAdresi;
+		this.kayitTarih = kayitTarih;
 	}
 
-	public Uye(String uyeAd, String uyeSoyad, String uyeOgrenciNo,
-			String uyeMailAdresi, String uyeTelNo, String uyeKayitTarih,
-			String uyeBolum) {
-		this.uyeAd = uyeAd;
-		this.uyeSoyad = uyeSoyad;
-		this.uyeOgrenciNo = uyeOgrenciNo;
-		this.uyeMailAdresi = uyeMailAdresi;
-		this.uyeTelNo = uyeTelNo;
-		this.uyeKayitTarih = uyeKayitTarih;
-		this.uyeBolum = uyeBolum;
+	public Uye(String ad, String soyad, String ogrenciNo, String mailAdresi,
+			String telNo, String kayitTarih, Integer bolumId) {
+		this.ad = ad;
+		this.soyad = soyad;
+		this.ogrenciNo = ogrenciNo;
+		this.mailAdresi = mailAdresi;
+		this.telNo = telNo;
+		this.kayitTarih = kayitTarih;
+		this.bolumId = bolumId;
 	}
 
 	@Id
 	@GeneratedValue(strategy = IDENTITY)
-	@Column(name = "uyeID", unique = true, nullable = false)
-	public Integer getUyeId() {
-		return this.uyeId;
+	@Column(name = "ID", unique = true, nullable = false)
+	public Integer getId() {
+		return this.id;
 	}
 
-	public void setUyeId(Integer uyeId) {
-		this.uyeId = uyeId;
+	public void setId(Integer id) {
+		this.id = id;
 	}
 
-	@Column(name = "uyeAd", nullable = false, length = 45)
-	public String getUyeAd() {
-		return this.uyeAd;
+	@Column(name = "Ad", nullable = false, length = 45)
+	public String getAd() {
+		return this.ad;
 	}
 
-	public void setUyeAd(String uyeAd) {
-		this.uyeAd = uyeAd;
+	public void setAd(String ad) {
+		this.ad = ad;
 	}
 
-	@Column(name = "uyeSoyad", nullable = false, length = 45)
-	public String getUyeSoyad() {
-		return this.uyeSoyad;
+	@Column(name = "Soyad", nullable = false, length = 45)
+	public String getSoyad() {
+		return this.soyad;
 	}
 
-	public void setUyeSoyad(String uyeSoyad) {
-		this.uyeSoyad = uyeSoyad;
+	public void setSoyad(String soyad) {
+		this.soyad = soyad;
 	}
 
-	@Column(name = "uyeOgrenciNo", nullable = false, length = 45)
-	public String getUyeOgrenciNo() {
-		return this.uyeOgrenciNo;
+	@Column(name = "OgrenciNo", nullable = false, length = 45)
+	public String getOgrenciNo() {
+		return this.ogrenciNo;
 	}
 
-	public void setUyeOgrenciNo(String uyeOgrenciNo) {
-		this.uyeOgrenciNo = uyeOgrenciNo;
+	public void setOgrenciNo(String ogrenciNo) {
+		this.ogrenciNo = ogrenciNo;
 	}
 
-	@Column(name = "uyeMailAdresi", nullable = false, length = 45)
-	public String getUyeMailAdresi() {
-		return this.uyeMailAdresi;
+	@Column(name = "MailAdresi", nullable = false, length = 45)
+	public String getMailAdresi() {
+		return this.mailAdresi;
 	}
 
-	public void setUyeMailAdresi(String uyeMailAdresi) {
-		this.uyeMailAdresi = uyeMailAdresi;
+	public void setMailAdresi(String mailAdresi) {
+		this.mailAdresi = mailAdresi;
 	}
 
-	@Column(name = "uyeTelNo", length = 45)
-	public String getUyeTelNo() {
-		return this.uyeTelNo;
+	@Column(name = "TelNo", length = 45)
+	public String getTelNo() {
+		return this.telNo;
 	}
 
-	public void setUyeTelNo(String uyeTelNo) {
-		this.uyeTelNo = uyeTelNo;
+	public void setTelNo(String telNo) {
+		this.telNo = telNo;
 	}
 
-	@Column(name = "uyeKayitTarih", nullable = false, length = 45)
-	public String getUyeKayitTarih() {
-		return this.uyeKayitTarih;
+	@Column(name = "KayitTarih", nullable = false, length = 45)
+	public String getKayitTarih() {
+		return this.kayitTarih;
 	}
 
-	public void setUyeKayitTarih(String uyeKayitTarih) {
-		this.uyeKayitTarih = uyeKayitTarih;
+	public void setKayitTarih(String kayitTarih) {
+		this.kayitTarih = kayitTarih;
 	}
 
-	@Column(name = "uyeBolum", nullable = false, length = 45)
-	public String getUyeBolum() {
-		return this.uyeBolum;
+	@Column(name = "BolumId")
+	public Integer getBolumId() {
+		return this.bolumId;
 	}
 
-	public void setUyeBolum(String uyeBolum) {
-		this.uyeBolum = uyeBolum;
+	public void setBolumId(Integer bolumId) {
+		this.bolumId = bolumId;
 	}
 
 }

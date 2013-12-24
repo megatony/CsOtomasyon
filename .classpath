@@ -2,7 +2,8 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.6"/>
-	<classpathentry kind="lib" path="/Users/Apple/Documents/Jar Files/hibernate-release-4.2.8.Final/lib/jpa/hibernate-entitymanager-4.2.8.Final.jar"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
+	<classpathentry kind="lib" path="/Users/Apple/Documents/Jar Files/mysql-connector-java-5.1.26/mysql-connector-java-5.1.26-bin.jar"/>
 	<classpathentry kind="lib" path="/Users/Apple/Documents/Jar Files/hibernate-release-4.2.8.Final/lib/required/antlr-2.7.7.jar"/>
 	<classpathentry kind="lib" path="/Users/Apple/Documents/Jar Files/hibernate-release-4.2.8.Final/lib/required/dom4j-1.6.1.jar"/>
 	<classpathentry kind="lib" path="/Users/Apple/Documents/Jar Files/hibernate-release-4.2.8.Final/lib/required/hibernate-commons-annotations-4.0.2.Final.jar"/>
@@ -11,7 +12,6 @@
 	<classpathentry kind="lib" path="/Users/Apple/Documents/Jar Files/hibernate-release-4.2.8.Final/lib/required/javassist-3.18.1-GA.jar"/>
 	<classpathentry kind="lib" path="/Users/Apple/Documents/Jar Files/hibernate-release-4.2.8.Final/lib/required/jboss-logging-3.1.0.GA.jar"/>
 	<classpathentry kind="lib" path="/Users/Apple/Documents/Jar Files/hibernate-release-4.2.8.Final/lib/required/jboss-transaction-api_1.1_spec-1.0.1.Final.jar"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/4"/>
-	<classpathentry kind="lib" path="/Users/Apple/Documents/Jar Files/mysql-connector-java-5.1.26/mysql-connector-java-5.1.26-bin.jar"/>
+	<classpathentry kind="lib" path="/Users/Apple/Documents/Jar Files/hibernate-release-4.2.8.Final/lib/jpa/hibernate-entitymanager-4.2.8.Final.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

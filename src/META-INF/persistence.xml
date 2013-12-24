@@ -7,6 +7,7 @@
 <persistence-unit name="CsOtomasyon">
 	<provider>org.hibernate.ejb.HibernatePersistence</provider>
 	<class>cs.otomasyon.dao.model.Uye</class>
+	<class>cs.otomasyon.dao.model.Bolum</class>
 	<properties>
         <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver"/>
 		<property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/OtomasyonSistemi"/>

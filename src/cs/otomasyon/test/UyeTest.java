@@ -2,11 +2,11 @@ package cs.otomasyon.test;
 
 import static org.junit.Assert.fail;
 
-import javax.persistence.EntityManager;
-import javax.persistence.Persistence;
+import java.util.List;
 
 import org.junit.Test;
 
+import cs.otomasyon.dao.dao.UyeDao;
 import cs.otomasyon.dao.model.Uye;
 
 public class UyeTest {
@@ -18,31 +18,29 @@ public class UyeTest {
 
 	@Test
 	public void uyeEkle() {
-		EntityManager entityManager = Persistence.createEntityManagerFactory(
-				"CsOtomasyon").createEntityManager();
-
-		entityManager.getTransaction().begin();
 		try {
 			Uye eklenecekUye = new Uye();
 
-			eklenecekUye.setUyeAd("Akın");
-			eklenecekUye.setUyeSoyad("Akgul");
-			eklenecekUye.setUyeKayitTarih("04.12.2013");
-			eklenecekUye.setUyeMailAdresi("ugurcansengit@gmail.com");
-			eklenecekUye.setUyeTelNo("0555555555");
-			eklenecekUye.setUyeOgrenciNo("151220102070");
-			eklenecekUye.setUyeBolum("Bilgisayar M�hendisli�i");
+			eklenecekUye.setAd("Gökçenur");
+			eklenecekUye.setSoyad("Oral");
+			eklenecekUye.setKayitTarih("04.12.2013");
+			eklenecekUye.setMailAdresi("ugurcansengit@gmail.com");
+			eklenecekUye.setTelNo("0555555555");
+			eklenecekUye.setOgrenciNo("151220102070");
+			eklenecekUye.setBolumId(1);
 
-			entityManager.persist(eklenecekUye);
-			entityManager.getTransaction().commit();
+			UyeDao uyeDao = new UyeDao();
+			uyeDao.kaydetKurali(eklenecekUye);
 		} catch (Exception e) {
-			entityManager.getTransaction().rollback();
+			System.out.println("Hata!");
 		}
-
-		entityManager.close();
-
 		System.out.println("finish");
+	}
 
+	@Test
+	public void UyeListele() {
+		UyeDao uyeDao = new UyeDao();
+		List<Uye> list = uyeDao.listele();
 	}
 
 }

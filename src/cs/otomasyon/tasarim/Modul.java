@@ -1,4 +1,4 @@
-package cs.otomasyon.tasarim.uys;
+package cs.otomasyon.tasarim;
 
 public enum Modul {
 	OTOMASYON_SISTEMI("Otomasyon Sistemi"), UYE_EKLE("Üye Ekle"), UYE_ISLEMLERI(
